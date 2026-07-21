@@ -20,7 +20,7 @@ export const SOCIAL_LINKS = {
 export const PERSONAL_INFO = {
   name: 'Dhanush S',
   title: 'Python Developer',
-  roles: ['Python Developer', 'Full Stack Developer', 'AI Enthusiast', 'Problem Solver'],
+  roles: ['Python Developer', 'Backend Developer', 'AI Enthusiast'],
   location: 'Erode, Tamil Nadu, India',
   email: 'dhanushdhanush12950@gmail.com',
   phone: '+91 63749 44704',
@@ -32,7 +32,7 @@ export const PERSONAL_INFO = {
     projects: 2,
     languages: 6,
     certifications: 4,
-    cgpa: '7.34',
+
   },
 }
 
@@ -93,12 +93,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     color: '#A855F7',
     skills: [
       { name: 'Python', level: 90, category: 'Languages' },
-      { name: 'JavaScript', level: 75, category: 'Languages' },
+      { name: 'JavaScript', level: 65, category: 'Languages' },
       { name: 'C', level: 70, category: 'Languages' },
       { name: 'SQL', level: 80, category: 'Languages' },
       { name: 'PHP', level: 60, category: 'Languages' },
-      { name: 'HTML5', level: 85, category: 'Languages' },
-      { name: 'CSS3', level: 80, category: 'Languages' },
+      { name: 'HTML5', level: 75, category: 'Languages' },
+      { name: 'CSS3', level: 70, category: 'Languages' },
     ],
   },
   {
@@ -120,7 +120,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'MySQL', level: 80, category: 'Databases' },
       { name: 'SQLite', level: 85, category: 'Databases' },
-      { name: 'MongoDB', level: 65, category: 'Databases' },
+      { name: 'MongoDB', level: 75, category: 'Databases' },
     ],
   },
   {
@@ -151,7 +151,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     icon: 'lightbulb',
     color: '#F43F5E',
     skills: [
-      { name: 'DSA', level: 80, category: 'Concepts' },
+      { name: 'DSA', level: 70, category: 'Concepts' },
       { name: 'OOP', level: 85, category: 'Concepts' },
       { name: 'Problem Solving', level: 90, category: 'Concepts' },
       { name: 'System Design', level: 70, category: 'Concepts' },
@@ -230,7 +230,7 @@ export const TIMELINE: TimelineEvent[] = [
   {
     year: '2026',
     title: 'BCA Graduation',
-    description: 'Expected graduation with CGPA 7.34/10. Ready to contribute to innovative software teams.',
+    description: 'Expected graduation. Ready to contribute to innovative software teams.',
     type: 'education',
     icon: 'graduation-cap',
   },

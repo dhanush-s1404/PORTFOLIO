@@ -23,13 +23,26 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '600'],
 })
 
+// Dynamic site URL
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000')
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: 'Dhanush S — Python Developer & Full Stack Engineer',
     template: '%s | Dhanush S',
   },
+
   description:
     'Portfolio of Dhanush S — Python Developer, Full Stack Engineer, and AI Enthusiast from Erode, India. Building intelligent applications with Python, Flask, React, and AI APIs.',
+
+  applicationName: 'Dhanush S Portfolio',
+
   keywords: [
     'Dhanush S',
     'Python Developer',
@@ -41,12 +54,25 @@ export const metadata: Metadata = {
     'Erode',
     'Tamil Nadu',
   ],
-  authors: [{ name: 'Dhanush S' }],
+
+  authors: [
+    {
+      name: 'Dhanush S',
+      url: siteUrl,
+    },
+  ],
+
   creator: 'Dhanush S',
+  publisher: 'Dhanush S',
+
+  alternates: {
+    canonical: '/',
+  },
+
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dhanush-s.vercel.app',
+    url: siteUrl,
     siteName: 'Dhanush S Portfolio',
     title: 'Dhanush S — Python Developer & Full Stack Engineer',
     description:
@@ -60,6 +86,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'Dhanush S — Python Developer & Full Stack Engineer',
@@ -67,6 +94,7 @@ export const metadata: Metadata = {
       'Portfolio of Dhanush S — Python Developer, Full Stack Engineer, and AI Enthusiast.',
     images: ['/og-image.png'],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -78,9 +106,16 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
+
+  manifest: '/manifest.json',
+
+  category: 'Technology',
 }
 
 export const viewport: Viewport = {

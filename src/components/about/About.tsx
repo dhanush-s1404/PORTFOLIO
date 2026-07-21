@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react'
 import { useInView } from '@/hooks/useInView'
-import { Code2, Brain, Rocket, Zap, Coffee, MapPin, GraduationCap, Award, Calendar } from 'lucide-react'
+import { Code2, Brain, Rocket, Zap, Coffee, MapPin, GraduationCap, Calendar } from 'lucide-react'
 import GlowCard from '@/components/ui/GlowCard'
 import TerminalTyping from '@/components/ui/TerminalTyping'
 
@@ -16,7 +16,7 @@ const fadeUp = {
 }
 
 const terminalLines = [
-  { command: 'whoami', output: 'Dhanush S — Python Developer & Full Stack Engineer' },
+  { command: 'whoami', output: 'Dhanush S — Python Developer | Backend Developer' },
   { command: 'cat skills.txt', output: 'Python, React, Flask, REST APIs, SQL, Git, AI Integration' },
   { command: 'echo $PASSION', output: 'Building AI-powered applications that solve real problems' },
   { command: 'grep -r "motto" .', output: '"If it works, make it better."' },
@@ -118,15 +118,7 @@ export default function About() {
                 </span>
                 <p className="font-bold text-xl mt-1 font-display">2026</p>
               </GlowCard>
-              <GlowCard className="p-4 rounded-2xl glass border border-white/5 text-center">
-                <div className="p-2 rounded-lg bg-primary/10 w-fit mx-auto mb-2">
-                  <Award size={16} className="text-primary" />
-                </div>
-                <span className="text-[10px] font-medium text-zinc-500 uppercase tracking-wider block">
-                  CGPA
-                </span>
-                <p className="font-bold text-xl mt-1 font-display">7.34</p>
-              </GlowCard>
+
             </motion.div>
 
             {/* Location */}

@@ -105,7 +105,8 @@ export default function Certifications() {
         >
           <p className="text-sm text-zinc-400">
             Always learning, always growing — currently exploring{' '}
-            <strong className="text-primary">Generative AI</strong> and{' '}
+            <strong className="text-primary">Generative AI</strong>
+            <strong className="text-primary">Backend Developer</strong> and{' '}
             <strong className="text-primary">Cloud Computing</strong>.
           </p>
         </motion.div>

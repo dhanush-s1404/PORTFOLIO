@@ -180,15 +180,7 @@ export default function Hero() {
               </p>
             </div>
           ))}
-          <div className="w-px h-8 bg-white/10 hidden sm:block" />
-          <div className="text-center">
-            <p className="text-2xl sm:text-3xl font-bold font-display text-emerald">
-              {PERSONAL_INFO.stats.cgpa}
-            </p>
-            <p className="text-[11px] text-zinc-500 mt-1 font-medium uppercase tracking-wider">
-              CGPA
-            </p>
-          </div>
+
         </motion.div>
 
         {/* CTA Buttons */}
