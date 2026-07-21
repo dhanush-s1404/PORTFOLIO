@@ -281,3 +281,121 @@ body {
 .animation-delay-500 { animation-delay: 500ms; }
 .animation-delay-600 { animation-delay: 600ms; }
 .animation-delay-700 { animation-delay: 700ms; }
+
+/* Smooth link underline animation */
+a[href^="http"]:not(.no-underline)::after,
+a[href^="#"]:not(.no-underline)::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background: linear-gradient(90deg, #A855F7, #D946EF);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover scale micro-interaction */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.2);
+}
+
+/* Animated gradient text on hover */
+.gradient-text-hover {
+  background: linear-gradient(135deg, #A855F7, #D946EF, #F43F5E, #22D3EE);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background-position 0.5s ease;
+}
+
+.gradient-text-hover:hover {
+  animation: gradientShift 2s ease infinite;
+}
+
+/* Pulse ring animation for status indicators */
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  animation: pulseRing 1.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Glass morphism enhanced */
+.glass-enhanced {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Animated border gradient */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.border-gradient-animated {
+  --border-angle: 0deg;
+  border: 2px solid transparent;
+  animation: borderSpin 4s linear infinite;
+}
+
+@keyframes borderSpin {
+  to { --border-angle: 360deg; }
+}
+
+/* Smooth scrollbar for horizontal scroll containers */
+.scroll-smooth-x {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-smooth-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* Interactive hover glow */
+.interactive-glow {
+  position: relative;
+}
+
+.interactive-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #A855F7, #D946EF, #F43F5E);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.interactive-glow:hover::before {
+  opacity: 0.15;
+}

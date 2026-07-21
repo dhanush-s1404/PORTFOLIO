@@ -205,6 +205,13 @@ export default function About() {
                 </p>
               </div>
             </motion.div>
+
+            {/* Interactive terminal */}
+            <motion.div variants={fadeUp} custom={6}>
+              <GlowCard className="p-5 rounded-2xl glass border border-white/5" glowColor="#34D399">
+                <TerminalTyping lines={terminalLines} />
+              </GlowCard>
+            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { useInView } from '@/hooks/useInView'
 import { PERSONAL_INFO, SOCIAL_LINKS } from '@/lib/constants'
 import GlowCard from '@/components/ui/GlowCard'
+import RippleEffect from '@/components/ui/RippleEffect'
 import { Mail, Phone, Linkedin, Github, Send, MessageCircle, ArrowUpRight } from 'lucide-react'
 import { useState, FormEvent } from 'react'
 
@@ -205,13 +206,15 @@ export default function Contact() {
                       placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0"
-                  >
-                    <Send size={16} />
-                    Send Message
-                  </button>
+                  <RippleEffect className="rounded-xl" color="rgba(255,255,255,0.2)">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-all hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0"
+                    >
+                      <Send size={16} />
+                      Send Message
+                    </button>
+                  </RippleEffect>
                 </form>
               )}
             </GlowCard>

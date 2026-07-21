@@ -4,6 +4,8 @@ import { motion } from 'motion/react'
 import { useInView } from '@/hooks/useInView'
 import { PROJECTS } from '@/lib/constants'
 import GlowCard from '@/components/ui/GlowCard'
+import SpotlightCard from '@/components/ui/SpotlightCard'
+import RippleEffect from '@/components/ui/RippleEffect'
 import { useTilt } from '@/hooks/useTilt'
 import {
   Github,
@@ -54,9 +56,9 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
         transition: 'transform 0.1s ease-out',
       }}
     >
-      <GlowCard
+      <SpotlightCard
         className="rounded-3xl glass border border-white/5 overflow-hidden"
-        glowColor={project.featured ? '#A855F7' : '#D946EF'}
+        spotlightColor={project.featured ? 'rgba(168, 85, 247, 0.15)' : 'rgba(217, 70, 239, 0.15)'}
       >
         {/* Gradient top bar */}
         <div
@@ -129,27 +131,31 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
           {/* Links */}
           <div className="flex flex-wrap gap-3">
             {project.live && project.live !== '#' && (
+              <RippleEffect className="rounded-xl" color="rgba(168, 85, 247, 0.3)">
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-xl hover:bg-primary-dark transition-all hover:shadow-lg hover:shadow-primary/25"
+                  aria-label={`View live demo of ${project.title}`}
+                >
+                  <ExternalLink size={14} />
+                  Live Demo
+                </a>
+              </RippleEffect>
+            )}
+            <RippleEffect className="rounded-xl" color="rgba(217, 70, 239, 0.2)">
               <a
-                href={project.live}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-xl hover:bg-primary-dark transition-all hover:shadow-lg hover:shadow-primary/25"
-                aria-label={`View live demo of ${project.title}`}
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 text-sm font-medium rounded-xl hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all"
+                aria-label={`View ${project.title} source code on GitHub`}
               >
-                <ExternalLink size={14} />
-                Live Demo
+                <Github size={14} />
+                Source Code
               </a>
-            )}
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 text-sm font-medium rounded-xl hover:border-primary/30 hover:text-primary hover:bg-primary/5 transition-all"
-              aria-label={`View ${project.title} source code on GitHub`}
-            >
-              <Github size={14} />
-              Source Code
-            </a>
+            </RippleEffect>
           </div>
         </div>
 
@@ -186,7 +192,7 @@ function ProjectCard({ project, index }: { project: typeof PROJECTS[0]; index: n
             </div>
           </div>
         )}
-      </GlowCard>
+      </SpotlightCard>
     </motion.article>
   )
 }

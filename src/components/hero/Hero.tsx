@@ -15,6 +15,7 @@ import { useTypingEffect } from '@/hooks/useTypingEffect'
 import { PERSONAL_INFO, SOCIAL_LINKS } from '@/lib/constants'
 import MagneticButton from '@/components/ui/MagneticButton'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
+import RippleEffect from '@/components/ui/RippleEffect'
 import ParticleField from './ParticleField'
 
 const container = {
@@ -192,20 +193,24 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-4 mb-12">
-          <MagneticButton
-            href={PERSONAL_INFO.resumeUrl}
-            className="inline-flex items-center gap-2.5 px-8 py-4 bg-primary text-white font-semibold rounded-2xl hover:bg-primary-dark transition-all hover:shadow-2xl hover:shadow-primary/30"
-          >
-            <Download size={18} />
-            Download Resume
-          </MagneticButton>
-          <MagneticButton
-            href="#contact"
-            className="inline-flex items-center gap-2.5 px-8 py-4 border-2 border-primary/30 text-primary font-semibold rounded-2xl hover:border-primary hover:bg-primary/5 transition-all"
-          >
-            Let&apos;s Connect
-            <ArrowRight size={18} />
-          </MagneticButton>
+          <RippleEffect className="rounded-2xl" color="rgba(255,255,255,0.2)">
+            <MagneticButton
+              href={PERSONAL_INFO.resumeUrl}
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-primary text-white font-semibold rounded-2xl hover:bg-primary-dark transition-all hover:shadow-2xl hover:shadow-primary/30"
+            >
+              <Download size={18} />
+              Download Resume
+            </MagneticButton>
+          </RippleEffect>
+          <RippleEffect className="rounded-2xl" color="rgba(168, 85, 247, 0.2)">
+            <MagneticButton
+              href="#contact"
+              className="inline-flex items-center gap-2.5 px-8 py-4 border-2 border-primary/30 text-primary font-semibold rounded-2xl hover:border-primary hover:bg-primary/5 transition-all"
+            >
+              Let&apos;s Connect
+              <ArrowRight size={18} />
+            </MagneticButton>
+          </RippleEffect>
         </motion.div>
 
         {/* Social links */}

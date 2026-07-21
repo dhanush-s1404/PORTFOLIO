@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import { PERSONAL_INFO, SOCIAL_LINKS, NAV_LINKS } from '@/lib/constants'
 import { Github, Linkedin, Mail, Heart, ArrowUp } from 'lucide-react'
+import LiveClock from '@/components/ui/LiveClock'
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -88,6 +89,11 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
+
+        {/* Live clock */}
+        <div className="flex justify-center mb-6">
+          <LiveClock />
+        </div>
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -4,6 +4,7 @@ import { motion } from 'motion/react'
 import { useInView } from '@/hooks/useInView'
 import { SKILL_CATEGORIES } from '@/lib/constants'
 import GlowCard from '@/components/ui/GlowCard'
+import SpotlightCard from '@/components/ui/SpotlightCard'
 import {
   Code2,
   Layers,
@@ -70,9 +71,9 @@ export default function Skills() {
               variants={fadeUp}
               custom={catIndex + 1}
             >
-              <GlowCard
+              <SpotlightCard
                 className="p-6 rounded-2xl glass border border-white/5 h-full group"
-                glowColor={category.color}
+                spotlightColor={`${category.color}25`}
               >
                 {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
@@ -123,7 +124,7 @@ export default function Skills() {
                     </div>
                   ))}
                 </div>
-              </GlowCard>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
