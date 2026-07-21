@@ -19,7 +19,7 @@ export const SOCIAL_LINKS = {
 
 export const PERSONAL_INFO = {
   name: 'Dhanush S',
-  title: 'Python Developer',
+  title: ['Python Developer', 'Python Backend Developer', 'Full Stack Developer', 'AI Prompt Engineer'],
   roles: ['Python Developer', 'Backend Developer', 'AI Enthusiast'],
   location: 'Erode, Tamil Nadu, India',
   email: 'dhanushdhanush12950@gmail.com',
